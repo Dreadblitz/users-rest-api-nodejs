@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Juan Pérez",
+      "email": "juan.perez@email.com",
+      "age": 30,
+      "createdAt": "2024-01-15T10:30:00.000Z",
+      "updatedAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "María García",
+      "email": "maria.garcia@email.com",
+      "age": 25,
+      "createdAt": "2024-01-16T14:20:00.000Z",
+      "updatedAt": "2024-01-16T14:20:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Carlos López",
+      "email": "carlos.lopez@email.com",
+      "age": 35,
+      "createdAt": "2024-01-17T09:15:00.000Z",
+      "updatedAt": "2024-01-17T09:15:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "ale Iovane",
+      "email": "ale@email.com",
+      "age": 20,
+      "createdAt": "2025-05-31T00:13:14.942Z",
+      "updatedAt": "2025-05-31T00:13:14.942Z"
+    }
+  ],
+  "nextId": 5
+}

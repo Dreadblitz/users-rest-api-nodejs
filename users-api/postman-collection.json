@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "users-api-collection",
+		"name": "API REST de Usuarios",
+		"description": "Colección completa para probar la API REST de usuarios con Node.js y Express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "🏠 Página Principal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "Página principal de la API con información básica"
+			}
+		},
+		{
+			"name": "❤️ Salud del Servidor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"health"
+					]
+				},
+				"description": "Verificar el estado y salud del servidor"
+			}
+		},
+		{
+			"name": "📚 Documentación",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/docs",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"docs"
+					]
+				},
+				"description": "Documentación completa de la API"
+			}
+		},
+		{
+			"name": "👥 Obtener Todos los Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Obtiene la lista completa de usuarios registrados"
+			}
+		},
+		{
+			"name": "👤 Obtener Usuario por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/users/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				},
+				"description": "Obtiene los detalles de un usuario específico por su ID"
+			}
+		},
+		{
+			"name": "➕ Crear Nuevo Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Ana Martínez\",\n  \"email\": \"ana.martinez@email.com\",\n  \"age\": 28\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Crea un nuevo usuario con validación completa"
+			}
+		},
+		{
+			"name": "✏️ Actualizar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Ana Martínez López\",\n  \"age\": 29\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/users/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				},
+				"description": "Actualiza un usuario existente (campos opcionales)"
+			}
+		},
+		{
+			"name": "🗑️ Eliminar Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/users/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				},
+				"description": "Elimina un usuario por su ID"
+			}
+		},
+		{
+			"name": "📊 Estadísticas de Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/users/stats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"stats"
+					]
+				},
+				"description": "Obtiene estadísticas generales de usuarios por rangos de edad"
+			}
+		},
+		{
+			"name": "❌ Crear Usuario - Error de Validación",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"A\",\n  \"email\": \"email-invalido\",\n  \"age\": 150\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Ejemplo de request con datos inválidos para probar las validaciones"
+			}
+		},
+		{
+			"name": "❌ Usuario No Encontrado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/users/999",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"999"
+					]
+				},
+				"description": "Ejemplo de búsqueda de usuario que no existe (error 404)"
+			}
+		},
+		{
+			"name": "❌ Ruta No Encontrada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/ruta-inexistente",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ruta-inexistente"
+					]
+				},
+				"description": "Ejemplo de acceso a ruta que no existe (error 404)"
+			}
+		}
+	]
+}
